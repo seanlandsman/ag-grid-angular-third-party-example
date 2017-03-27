@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    /* with ts 2.1 commnents seem to trip systemjs-builder up */
+    "removeComments": true,
+    "noImplicitAny": false,
+    "lib": ["dom","es2015"],
+    "outDir": "aot"
+  },
+  "exclude": [
+    "node_modules/",
+    "docs"
+  ],
+  "angularCompilerOptions": {
+    "genDir": "aot",
+    "skipMetadataEmit": true
+  }
+}
