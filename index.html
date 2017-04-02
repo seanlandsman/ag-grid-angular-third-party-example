@@ -17,13 +17,29 @@
     <!-- problem, so I've not included how to do it here. For simplicity, and -->
     <!-- explicitness, the CSS files are loaded in directly here. -->
     <link href="node_modules/ag-grid/dist/styles/ag-grid.css" rel="stylesheet"/>
+    <link href="node_modules/ag-grid/dist/styles/theme-material.css" rel="stylesheet"/>
     <link href="node_modules/ag-grid/dist/styles/theme-fresh.css" rel="stylesheet"/>
 
     <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
 
     <!-- material design -->
     <link href="node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="icons/material.css" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+
+    <style>
+        .align-left {
+            text-align: left;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+    </style>
 
     <!-- Configure SystemJS -->
     <script src="systemjs.config.js"></script>
@@ -32,7 +48,6 @@
             console.error(err);
         });
     </script>
-
 </head>
 
 <!-- 3. Display the application -->
