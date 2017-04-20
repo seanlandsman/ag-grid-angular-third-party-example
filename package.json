@@ -35,7 +35,7 @@
     "@angular/core": "4.0.x",
     "@angular/forms": "4.0.x",
     "@angular/http": "4.0.x",
-    "@angular/material": "^2.0.0-beta.2",
+    "@angular/material": "2.0.0-beta.3",
     "@angular/platform-browser": "4.0.x",
     "@angular/platform-browser-dynamic": "4.0.x",
     "@angular/platform-server": "4.0.x",

@@ -1,4 +1,4 @@
-import {Component, ViewChild} from "@angular/core";
+import {Component, ViewChildren} from "@angular/core";
 import {ICellEditorAngularComp} from "ag-grid-angular/main";
 import {MdRadioButton} from "@angular/material";
 
@@ -21,7 +21,7 @@ import {MdRadioButton} from "@angular/material";
                 background: #fff;
                 width: 350px;
             }
-            
+
             .radio-group {
                 display: inline-flex;
                 flex-direction: column;
@@ -40,7 +40,7 @@ export class MdRadioComponent implements ICellEditorAngularComp {
     private favouriteFruit: string;
     private selectedIndex: number;
 
-    @ViewChild(MdRadioButton) public radio;
+    @ViewChildren(MdRadioButton) public fruitRadios;
 
     agInit(params: any): void {
         this.params = params;
@@ -55,16 +55,17 @@ export class MdRadioComponent implements ICellEditorAngularComp {
 
     // dont use afterGuiAttached for post gui events - hook into ngAfterViewInit instead for this
     ngAfterViewInit() {
-        // focus on next tick
-        setTimeout(() => {
-            this.radio.focus();
-        }, 0);
-
         this.selectFavouriteFruitBasedOnSelectedIndex();
     }
 
     private selectFavouriteFruitBasedOnSelectedIndex() {
         this.favouriteFruit = this.fruits[this.selectedIndex];
+
+        // focus on next tick
+        let fruitRadio = this.fruitRadios.find((radio) => radio.value === this.favouriteFruit);
+        setTimeout(() => {
+            fruitRadio.focus();
+        }, 0);
     }
 
     getValue() {

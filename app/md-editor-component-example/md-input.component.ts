@@ -20,6 +20,7 @@ import {ICellEditorAngularComp} from "ag-grid-angular/main";
                 border: 1px solid grey;
                 background: #fff;
                 width: 350px;
+                padding-left: 15px;
             }
         `
     ]

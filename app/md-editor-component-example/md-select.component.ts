@@ -5,7 +5,7 @@ import {ICellEditorAngularComp} from "ag-grid-angular/main";
     selector: 'radio-cell',
     template: `
         <div class="container" #group tabindex="0" (keydown)="onKeyDown($event)">
-            <md-select placeholder="Favorite vegetable" [(ngModel)]="favouriteVegetable">
+            <md-select [(ngModel)]="favouriteVegetable">
                 <md-option *ngFor="let vegetable of vegetables" [value]="vegetable">
                     {{ vegetable }}
                 </md-option>
@@ -20,6 +20,7 @@ import {ICellEditorAngularComp} from "ag-grid-angular/main";
                 background: #fff;
                 width: 190px;
                 height: 35px;
+                padding-left: 15px;
             }
             
             .container:focus {

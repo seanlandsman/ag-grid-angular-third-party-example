@@ -4,15 +4,20 @@ import {ICellRendererAngularComp} from "ag-grid-angular/dist/interfaces";
 @Component({
     selector: 'progress-component',
     template: `
-        <md-progress-circle *ngIf="!value"
-                [color]="color"
+        <md-progress-spinner *ngIf="!value"
+                [attr.color]="color"
                 [mode]="mode">
-        </md-progress-circle>
-        <span *ngIf="value">{{value}}</span>
+        </md-progress-spinner>
+        <div class="value" *ngIf="value">{{value}}</div>
     `,
     styles: [`
+        .value {
+            vertical-align: middle;
+            line-height: 48px;
+        }
+
         /deep/
-        .mat-progress-circle {
+        .mat-progress-spinner {
             height: 48px !important;
             width: 48px !important;
         }
