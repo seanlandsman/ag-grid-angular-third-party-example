@@ -8,6 +8,7 @@ import {AppComponent} from "./app.component";
 // ng2 bootstrap
 import {ButtonsModule, DatepickerModule, BsDropdownModule} from "ngx-bootstrap";
 import {BootstrapDatePickerComponent} from "./bs-editor-component-example/date-picker.component";
+import {BootstrapDatePickerDateComponent} from "./bs-editor-component-example/date-picker.date.component";
 import {BootstrapDropdownComponent} from "./bs-editor-component-example/dropdown.component";
 import {BootstrapEditorComponent} from "./bs-editor-component-example/bootstrap-editor.component";
 import {BootstrapRadioComponent} from "./bs-editor-component-example/radio-buttons.component";
@@ -33,6 +34,7 @@ import {MdProgressSpinnerComponent} from "./md-editor-component-example/md-progr
         AgGridModule.withComponents(
             [
                 BootstrapDatePickerComponent,
+                BootstrapDatePickerDateComponent,
                 BootstrapDropdownComponent,
                 BootstrapRadioComponent,
                 MdCheckboxComponent,
@@ -53,6 +55,7 @@ import {MdProgressSpinnerComponent} from "./md-editor-component-example/md-progr
         AppComponent,
         BootstrapEditorComponent,
         BootstrapDatePickerComponent,
+        BootstrapDatePickerDateComponent,
         BootstrapDropdownComponent,
         BootstrapRadioComponent,
         MdEditorComponentOne,
