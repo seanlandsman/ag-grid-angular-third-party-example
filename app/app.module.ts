@@ -6,7 +6,7 @@ import {AgGridModule} from "ag-grid-angular/main";
 // application
 import {AppComponent} from "./app.component";
 // ng2 bootstrap
-import {ButtonsModule, DatepickerModule, DropdownModule} from "ng2-bootstrap";
+import {ButtonsModule, DatepickerModule, BsDropdownModule} from "ngx-bootstrap";
 import {BootstrapDatePickerComponent} from "./bs-editor-component-example/date-picker.component";
 import {BootstrapDropdownComponent} from "./bs-editor-component-example/dropdown.component";
 import {BootstrapEditorComponent} from "./bs-editor-component-example/bootstrap-editor.component";
@@ -44,7 +44,7 @@ import {MdProgressSpinnerComponent} from "./md-editor-component-example/md-progr
                 MdProgressSpinnerComponent
             ]),
         DatepickerModule.forRoot(),
-        DropdownModule.forRoot(),
+        BsDropdownModule.forRoot(),
         ButtonsModule.forRoot(),
         BrowserAnimationsModule,
         MaterialModule

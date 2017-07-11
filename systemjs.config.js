@@ -25,7 +25,7 @@
                 // material design
                 '@angular/material': 'npm:@angular/material/bundles/material.umd.js',
                 // ng2 bootstrap
-                'ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js'
+                'ngx-bootstrap': 'node_modules/ngx-bootstrap/bundles/ngx-bootstrap.umd.js'
             },
             packages: {
                 app: {
