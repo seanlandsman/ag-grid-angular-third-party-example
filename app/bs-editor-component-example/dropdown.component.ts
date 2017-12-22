@@ -4,18 +4,19 @@ import {ICellEditorAngularComp} from "ag-grid-angular/main";
 @Component({
     selector: 'dropdown-editor-cell',
     template: `
-        <div (keydown)="onKeyDown($event)">
-            <div class="btn-group" dropdown [isOpen]="true">
-                <ul dropdownMenu role="menu" aria-labelledby="single-button">
-                    <li *ngFor="let fruit of fruits">
-                      <a #option [attr.id]="fruit"  class="dropdown-item" href="#" (click)="onClick(fruit)">{{fruit}}</a>
-                    </li>
-                    <li *ngIf="vegetables" class="divider dropdown-divider"></li>
-                    <li *ngFor="let vegetable of vegetables">
-                      <a #option [attr.id]="vegetable" class="dropdown-item" href="#" (click)="onClick(vegetable)">{{vegetable}}</a>
-                    </li>
-                </ul>
-            </div>
+        <div class="btn-group" dropdown (keydown)="onKeyDown($event)" [isOpen]="true">
+            <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+                Select One of Your Five A Day <span class="caret"></span>
+            </button>
+            <ul *dropdownMenu class="dropdown-menu" role="menu">
+                <li *ngFor="let fruit of fruits">
+                    <a #option [attr.id]="fruit" class="dropdown-item" href="#" (click)="onClick(fruit)">{{fruit}}</a>
+                </li>
+                <li *ngIf="vegetables" class="divider dropdown-divider"></li>
+                <li *ngFor="let vegetable of vegetables">
+                    <a #option [attr.id]="vegetable" class="dropdown-item" href="#" (click)="onClick(vegetable)">{{vegetable}}</a>
+                </li>
+            </ul>
         </div>
     `
 })
@@ -48,8 +49,10 @@ export class BootstrapDropdownComponent implements ICellEditorAngularComp {
     }
 
     ngAfterViewInit() {
-        this.allOptions = this.optionsQueryList.toArray();
-        this.focusOnSelectedIndex();
+        setTimeout(() => {
+            this.allOptions = this.optionsQueryList.toArray();
+            this.focusOnSelectedIndex();
+        });
     }
 
     private focusOnSelectedIndex() {

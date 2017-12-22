@@ -4,7 +4,7 @@ import {ICellRendererAngularComp} from "ag-grid-angular/main";
 @Component({
     selector: 'checkbox-cell',
     template: `
-        <md-checkbox [ngModel]="checked" (ngModelChange)="onChange($event)"></md-checkbox>
+        <mat-checkbox [ngModel]="checked" (ngModelChange)="onChange($event)"></mat-checkbox>
     `,
     styles: [
             `
@@ -25,7 +25,7 @@ import {ICellRendererAngularComp} from "ag-grid-angular/main";
         `
     ]
 })
-export class MdCheckboxComponent implements ICellRendererAngularComp {
+export class MatCheckboxComponent implements ICellRendererAngularComp {
     private params: any;
 
     private checked: boolean = false;
@@ -39,5 +39,9 @@ export class MdCheckboxComponent implements ICellRendererAngularComp {
     onChange(checked: boolean) {
         this.checked = checked;
         this.params.node.setDataValue(this.params.colDef, (this.checked ? "On" : "Off"));
+    }
+
+    refresh(params: any): boolean {
+        return false;
     }
 }

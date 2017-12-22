@@ -1,7 +1,6 @@
 import {Component} from "@angular/core";
 
 import {GridOptions} from "ag-grid/main";
-import {BootstrapDatePickerDateComponent} from "./date-picker.date.component";
 import {BootstrapRadioComponent} from "./radio-buttons.component";
 import {BootstrapDropdownComponent} from "./dropdown.component";
 import {BootstrapDatePickerComponent} from "./date-picker.component";
@@ -22,7 +21,11 @@ export class BootstrapEditorComponent {
             onGridReady: () => {
                 this.gridOptions.api.sizeColumnsToFit();
             },
-            dateComponentFramework: BootstrapDatePickerDateComponent
+            frameworkComponents: {
+                'dateEditor': BootstrapDatePickerComponent,
+                'dropdownEditor': BootstrapDropdownComponent,
+                'radioRenderer': BootstrapRadioComponent
+            }
         }
     }
 
@@ -31,13 +34,13 @@ export class BootstrapEditorComponent {
             {
                 headerName: "Date Picker",
                 field: "date",
-                cellEditorFramework: BootstrapDatePickerComponent,
+                cellEditor: 'dateEditor',
                 editable: true
             },
             {
                 headerName: "Dropdown",
                 field: "fruit_vegetables",
-                cellEditorFramework: BootstrapDropdownComponent,
+                cellEditor: 'dropdownEditor',
                 cellEditorParams: {
                     fruits: ['Apple', 'Orange', 'Banana'],
                     vegetables: ['Carrot', 'Pea', 'Broccoli']
@@ -47,31 +50,7 @@ export class BootstrapEditorComponent {
             {
                 headerName: "Radio (inline editing)",
                 field: "on_off",
-                cellRendererFramework: BootstrapRadioComponent
-            },
-            {
-                headerName: "Date Picker DateComponent",
-                field: "date",
-                filter: 'date',
-                filterParams: {
-                    comparator: function (filterLocalDateAtMidnight, cellValue) {
-                        var dateAsString = cellValue;
-                        var dateParts = dateAsString.split("/");
-                        var cellDate = new Date(Number(dateParts[2]), Number(dateParts[1]) - 1, Number(dateParts[0]));
-
-                        if (filterLocalDateAtMidnight.getTime() == cellDate.getTime()) {
-                            return 0
-                        }
-
-                        if (cellDate < filterLocalDateAtMidnight) {
-                            return -1;
-                        }
-
-                        if (cellDate > filterLocalDateAtMidnight) {
-                            return 1;
-                        }
-                    }
-                }
+                cellRenderer: 'radioRenderer'
             }
         ];
     }

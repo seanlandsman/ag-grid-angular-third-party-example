@@ -6,26 +6,34 @@ import {AgGridModule} from "ag-grid-angular/main";
 // application
 import {AppComponent} from "./app.component";
 // ng2 bootstrap
-import {ButtonsModule, DatepickerModule, BsDropdownModule} from "ngx-bootstrap";
+import {BsDropdownModule, ButtonsModule, DatepickerModule} from "ngx-bootstrap";
 import {BootstrapDatePickerComponent} from "./bs-editor-component-example/date-picker.component";
-import {BootstrapDatePickerDateComponent} from "./bs-editor-component-example/date-picker.date.component";
 import {BootstrapDropdownComponent} from "./bs-editor-component-example/dropdown.component";
 import {BootstrapEditorComponent} from "./bs-editor-component-example/bootstrap-editor.component";
 import {BootstrapRadioComponent} from "./bs-editor-component-example/radio-buttons.component";
 // material design
+import {
+    MatButtonToggleModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatSliderModule
+} from "@angular/material";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MaterialModule} from '@angular/material';
-import {MdEditorComponentOne} from "./md-editor-component-example/md-editor-one.component";
-import {MdCheckboxComponent} from "./md-editor-component-example/md-checkbox.component";
-import {MdInputComponent} from "./md-editor-component-example/md-input.component";
-import {MdRadioComponent} from "./md-editor-component-example/md-radio.component";
-import {MdSelectComponent} from "./md-editor-component-example/md-select.component";
-
-import {MdEditorComponentTwo} from "./md-editor-component-example/md-editor-two.component";
-import {MdSliderComponent} from "./md-editor-component-example/md-slider.component";
-import {MdButtonToggleHeaderComponent} from "./md-editor-component-example/md-button-toggle.component";
+import {MatEditorComponentOne} from "./mat-editor-component-example/mat-editor-one.component";
+import {MatCheckboxComponent} from "./mat-editor-component-example/mat-checkbox.component";
+import {MatInputComponent} from "./mat-editor-component-example/mat-input.component";
+import {MatRadioComponent} from "./mat-editor-component-example/mat-radio.component";
+import {MatSelectComponent} from "./mat-editor-component-example/mat-select.component";
+import {MatEditorComponentTwo} from "./mat-editor-component-example/mat-editor-two.component";
+import {MatSliderComponent} from "./mat-editor-component-example/mat-slider.component";
+import {MatButtonToggleHeaderComponent} from "./mat-editor-component-example/mat-button-toggle.component";
+import {MatProgressSpinnerComponent} from "./mat-editor-component-example/mat-progress-spinner.component";
 import {ColumnAlignmentService} from "./services/columnAlignmentService";
-import {MdProgressSpinnerComponent} from "./md-editor-component-example/md-progress-spinner.component";
 
 @NgModule({
     imports: [
@@ -34,39 +42,45 @@ import {MdProgressSpinnerComponent} from "./md-editor-component-example/md-progr
         AgGridModule.withComponents(
             [
                 BootstrapDatePickerComponent,
-                BootstrapDatePickerDateComponent,
                 BootstrapDropdownComponent,
                 BootstrapRadioComponent,
-                MdCheckboxComponent,
-                MdInputComponent,
-                MdRadioComponent,
-                MdSelectComponent,
-                MdSliderComponent,
-                MdButtonToggleHeaderComponent,
-                MdProgressSpinnerComponent
+                MatCheckboxComponent,
+                MatInputComponent,
+                MatRadioComponent,
+                MatSelectComponent,
+                MatSliderComponent,
+                MatButtonToggleHeaderComponent,
+                MatProgressSpinnerComponent
             ]),
         DatepickerModule.forRoot(),
         BsDropdownModule.forRoot(),
         ButtonsModule.forRoot(),
         BrowserAnimationsModule,
-        MaterialModule
+        MatCheckboxModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatRadioModule,
+        MatSelectModule,
+        MatButtonToggleModule,
+        MatIconModule,
+        MatProgressSpinnerModule,
+        MatSliderModule
     ],
     declarations: [
         AppComponent,
         BootstrapEditorComponent,
         BootstrapDatePickerComponent,
-        BootstrapDatePickerDateComponent,
         BootstrapDropdownComponent,
         BootstrapRadioComponent,
-        MdEditorComponentOne,
-        MdCheckboxComponent,
-        MdInputComponent,
-        MdRadioComponent,
-        MdSelectComponent,
-        MdEditorComponentTwo,
-        MdSliderComponent,
-        MdButtonToggleHeaderComponent,
-        MdProgressSpinnerComponent
+        MatEditorComponentOne,
+        MatCheckboxComponent,
+        MatInputComponent,
+        MatRadioComponent,
+        MatSelectComponent,
+        MatEditorComponentTwo,
+        MatSliderComponent,
+        MatButtonToggleHeaderComponent,
+        MatProgressSpinnerComponent
     ],
     providers: [ColumnAlignmentService],
     bootstrap: [AppComponent]

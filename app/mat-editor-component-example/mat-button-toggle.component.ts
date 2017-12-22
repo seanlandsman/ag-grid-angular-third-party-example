@@ -6,22 +6,26 @@ import {ColumnAlignmentService} from "../services/columnAlignmentService";
     selector: 'header-component',
     template: `
         <div class="container">
-            <md-button-toggle-group (change)="groupChanged($event)">
-                <md-button-toggle value="left">
-                    <md-icon>format_align_left</md-icon>
-                </md-button-toggle>
-                <md-button-toggle value="center">
-                    <md-icon>format_align_center</md-icon>
-                </md-button-toggle>
-                <md-button-toggle value="right">
-                    <md-icon>format_align_right</md-icon>
-                </md-button-toggle>
-            </md-button-toggle-group>
+            <mat-button-toggle-group (change)="groupChanged($event)" class="group">
+                <mat-button-toggle value="left">
+                    <mat-icon>format_align_left</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="center">
+                    <mat-icon>format_align_center</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="right">
+                    <mat-icon>format_align_right</mat-icon>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
         </div>
     `,
     styles: [`
         .container {
             width: 100%;
+        }
+
+        .group {
+            margin-left: 30px;
         }
 
         /deep/
@@ -30,7 +34,7 @@ import {ColumnAlignmentService} from "../services/columnAlignmentService";
         }
     `]
 })
-export class MdButtonToggleHeaderComponent implements IHeaderAngularComp {
+export class MatButtonToggleHeaderComponent implements IHeaderAngularComp {
     params: any;
 
     agInit(params: any): void {

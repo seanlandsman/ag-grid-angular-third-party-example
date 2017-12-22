@@ -24,7 +24,7 @@ export class BootstrapDatePickerComponent implements ICellEditorAngularComp {
         return true;
     }
 
-    onClick(date:Date) {
+    onClick(date: Date) {
         this.selectedDate = date;
         this.params.api.stopEditing();
     }

@@ -1,12 +1,14 @@
 import {Component} from "@angular/core";
-import {ICellRendererAngularComp, ICellEditorAngularComp} from "ag-grid-angular/main";
+import {ICellEditorAngularComp, ICellRendererAngularComp} from "ag-grid-angular/main";
 
 @Component({
     selector: 'radio-renderer-cell',
     template: `
         <span class="btn-group">
-            <label class="btn btn-primary" [ngModel]="radioModel" (ngModelChange)="onChange($event)" btnRadio="On">On</label>
-            <label class="btn btn-primary" [ngModel]="radioModel" (ngModelChange)="onChange($event)" btnRadio="Off">Off</label>
+            <label class="btn btn-primary" [ngModel]="radioModel" (ngModelChange)="onChange($event)"
+                   btnRadio="On">On</label>
+            <label class="btn btn-primary" [ngModel]="radioModel" (ngModelChange)="onChange($event)"
+                   btnRadio="Off">Off</label>
         </span>
     `,
     styles: ['.btn { height: 20px; padding-top: 0; padding-bottom: 0;} ']
@@ -29,5 +31,9 @@ export class BootstrapRadioComponent implements ICellEditorAngularComp, ICellRen
 
     getValue() {
         return this.radioModel;
+    }
+
+    refresh(params: any): boolean {
+        return false;
     }
 }
