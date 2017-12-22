@@ -39,7 +39,7 @@
                 '@angular/cdk/layout': 'npm:@angular/cdk/bundles/cdk-layout.umd.js',
                 '@angular/cdk/table': 'npm:@angular/cdk/bundles/cdk-table.umd.js',
                 '@angular/cdk/stepper': 'npm:@angular/cdk/bundles/cdk-stepper.umd.js',
-                // ng2 bootstrap
+                // ngx bootstrap
                 'ngx-bootstrap': 'node_modules/ngx-bootstrap/bundles/ngx-bootstrap.umd.js'
             },
             packages: {
